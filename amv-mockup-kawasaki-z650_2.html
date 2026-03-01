@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assurance moto Kawasaki Z 650 | AMV</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --amv-green: #00A850;
+            --amv-green-dark: #008a42;
+            --amv-white: #ffffff;
+            --amv-gray-light: #f5f5f5;
+            --amv-gray-border: #e0e0e0;
+            --amv-gray-text: #555;
+            --amv-dark: #1a1a1a;
+            --amv-orange: #ff8c00;
+        }
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--amv-dark);
+            background: var(--amv-white);
+            line-height: 1.6;
+        }
+
+        /* HEADER */
+        .header {
+            border-bottom: 1px solid var(--amv-gray-border);
+            background: var(--amv-white);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 72px;
+        }
+        .logo svg { height: 36px; }
+        .header-nav { display: flex; gap: 2rem; align-items: center; }
+        .header-nav a {
+            text-decoration: none;
+            color: var(--amv-dark);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .header-nav a:hover { color: var(--amv-green); }
+        .header-cta {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        .btn-outline-header {
+            border: 1.5px solid var(--amv-orange);
+            color: var(--amv-orange);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        .btn-outline-header:hover {
+            background: var(--amv-orange);
+            color: white;
+        }
+
+        /* BREADCRUMB */
+        .breadcrumb {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            font-size: 0.85rem;
+            color: var(--amv-gray-text);
+        }
+        .breadcrumb a {
+            color: var(--amv-green);
+            text-decoration: none;
+        }
+        .breadcrumb span { margin: 0 6px; }
+
+        /* HERO */
+        .hero {
+            background: var(--amv-white);
+            padding: 0 2rem 3rem;
+        }
+        .hero-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        .hero-badge {
+            display: inline-block;
+            background: var(--amv-green);
+            color: white;
+            padding: 4px 14px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
+        }
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 0.75rem;
+            color: var(--amv-dark);
+        }
+        .hero h1 strong {
+            color: var(--amv-green);
+        }
+        .hero-subtitle {
+            font-size: 1.05rem;
+            color: var(--amv-gray-text);
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+        }
+        .hero-cta-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .btn-primary {
+            background: var(--amv-green);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: background 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-primary:hover { background: var(--amv-green-dark); }
+        .btn-secondary {
+            background: transparent;
+            color: var(--amv-green);
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 2px solid var(--amv-green);
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+        .btn-secondary:hover { background: var(--amv-green); color: white; }
+        
+        .hero-image {
+            text-align: center;
+            position: relative;
+        }
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            filter: drop-shadow(0 20px 40px rgba(0,0,0,0.08));
+        }
+        .hero-image-placeholder {
+            width: 100%;
+            height: 380px;
+            background: var(--amv-gray-light);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-image-placeholder img {
+            max-width: 95%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+        .moto-illustration {
+            font-size: 8rem;
+            opacity: 0.15;
+        }
+        .hero-image-label {
+            position: absolute;
+            bottom: 16px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+            white-space: nowrap;
+        }
+
+        /* REASSURANCE BAR */
+        .reassurance {
+            background: var(--amv-gray-light);
+            padding: 2rem;
+            border-top: 1px solid var(--amv-gray-border);
+            border-bottom: 1px solid var(--amv-gray-border);
+        }
+        .reassurance-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+        .reassurance-item {
+            text-align: center;
+            padding: 0 1rem;
+        }
+        .reassurance-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--amv-green);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 0.75rem;
+            color: white;
+            font-size: 1.2rem;
+        }
+        .reassurance-item h3 {
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+        .reassurance-item p {
+            font-size: 0.8rem;
+            color: var(--amv-gray-text);
+        }
+
+        /* CONTENT SECTIONS */
+        .section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 16px;
+        }
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--amv-green);
+            border-radius: 2px;
+        }
+        .section-title span { color: var(--amv-green); }
+
+        /* FICHE TECHNIQUE */
+        .fiche-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+        .fiche-card {
+            background: white;
+            border: 1px solid var(--amv-gray-border);
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+        .fiche-card h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--amv-green);
+            margin-bottom: 1rem;
+        }
+        .spec-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--amv-gray-light);
+            font-size: 0.9rem;
+        }
+        .spec-row:last-child { border-bottom: none; }
+        .spec-label { color: var(--amv-gray-text); }
+        .spec-value { font-weight: 600; }
+        
+        .fiche-text {
+            font-size: 0.95rem;
+            color: var(--amv-gray-text);
+            line-height: 1.7;
+        }
+        .fiche-text p { margin-bottom: 1rem; }
+
+        /* MODELS CAROUSEL */
+        .models-section {
+            background: var(--amv-gray-light);
+            padding: 3rem 0;
+        }
+        .models-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        .models-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .model-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--amv-gray-border);
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-decoration: none;
+            color: var(--amv-dark);
+        }
+        .model-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+        }
+        .model-card-img {
+            height: 160px;
+            background: var(--amv-gray-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            padding: 10px;
+        }
+        .model-card-img img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        .model-card-body {
+            padding: 1rem 1.25rem;
+        }
+        .model-card-body h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+        .model-card-price {
+            display: flex;
+            align-items: baseline;
+            gap: 4px;
+            margin-top: 0.5rem;
+        }
+        .model-card-price small {
+            font-size: 0.75rem;
+            color: var(--amv-gray-text);
+        }
+        .model-card-price strong {
+            font-size: 1.3rem;
+            color: var(--amv-green);
+        }
+        .model-card-price .unit {
+            font-size: 0.8rem;
+            color: var(--amv-gray-text);
+        }
+        .models-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--amv-green);
+            font-weight: 600;
+            text-decoration: none;
+            margin-top: 1.5rem;
+            font-size: 0.95rem;
+        }
+        .models-link:hover { text-decoration: underline; }
+
+        /* CTA BANNER */
+        .cta-banner {
+            background: var(--amv-green);
+            padding: 3rem 2rem;
+            text-align: center;
+            color: white;
+        }
+        .cta-banner h2 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+        .cta-banner p {
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+        .btn-white {
+            background: white;
+            color: var(--amv-green);
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-white:hover { background: #f0f0f0; }
+
+        /* FAQ */
+        .faq-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+        .faq-list {
+            margin-top: 1.5rem;
+        }
+        .faq-item {
+            border: 1px solid var(--amv-gray-border);
+            border-radius: 12px;
+            margin-bottom: 0.75rem;
+            overflow: hidden;
+        }
+        .faq-question {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            background: white;
+            border: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--amv-green);
+            text-align: left;
+        }
+        .faq-question:hover { background: var(--amv-gray-light); }
+        .faq-arrow {
+            transition: transform 0.3s;
+            color: var(--amv-orange);
+            font-size: 1.2rem;
+        }
+        .faq-item.open .faq-arrow { transform: rotate(180deg); }
+        .faq-answer {
+            padding: 0 1.5rem 1rem;
+            font-size: 0.9rem;
+            color: var(--amv-gray-text);
+            line-height: 1.7;
+            display: none;
+        }
+        .faq-item.open .faq-answer { display: block; }
+
+        /* INTERNAL LINKS */
+        .internal-links {
+            background: var(--amv-gray-light);
+            padding: 2rem;
+        }
+        .internal-links-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+        .internal-links h3 {
+            width: 100%;
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .internal-link-pill {
+            background: white;
+            border: 1px solid var(--amv-gray-border);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            text-decoration: none;
+            color: var(--amv-dark);
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+        .internal-link-pill:hover {
+            border-color: var(--amv-green);
+            color: var(--amv-green);
+        }
+
+        /* FOOTER */
+        .footer {
+            background: white;
+            border-top: 1px solid var(--amv-gray-border);
+            padding: 2rem;
+            text-align: center;
+        }
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            color: var(--amv-gray-text);
+        }
+        .footer-links { display: flex; gap: 1.5rem; }
+        .footer-links a {
+            color: var(--amv-gray-text);
+            text-decoration: none;
+        }
+        .footer-links a:hover { color: var(--amv-green); }
+
+        /* MOCKUP LABEL */
+        .mockup-banner {
+            background: var(--amv-orange);
+            color: white;
+            text-align: center;
+            padding: 8px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero-inner { grid-template-columns: 1fr; }
+            .reassurance-inner { grid-template-columns: repeat(2, 1fr); }
+            .fiche-grid { grid-template-columns: 1fr; }
+            .models-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 1.6rem; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- MOCKUP BANNER -->
+<div class="mockup-banner">⚡ Maquette statique — Proposition de refonte page modèle AMV</div>
+
+<!-- HEADER -->
+<div class="header">
+    <div class="header-inner">
+        <a href="#" class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 111 40" height="36">
+                <g fill="#00A850" fill-rule="evenodd" clip-rule="evenodd">
+                    <path d="M51.276 14.217c0-3.228-.683-4.598-2.512-4.598-1.828 0-2.511 1.363-2.511 4.598V40h-10.27V1.176h9.931v4.57h.116C47.34 1.94 49.967 0 53.517 0c4.225 0 6.276 2.013 7.535 5.96C62.633 1.579 65.662 0 68.8 0c4.532 0 8.04 2.228 8.046 10.553V40H66.57V14.218c0-3.23-.684-4.598-2.512-4.598-1.829 0-2.512 1.362-2.512 4.598V40h-10.27V14.218ZM14.002 25.592l2.99-16.477h.118l2.989 16.472h-6.097v.005Zm9.912-24.415h-13.72L0 40h11.6l1.116-6.795h8.676L22.51 40h11.645L23.914 1.177ZM99.1 1.177l-4.51 29.257h-.114l-4.51-29.257h-11.9L87.32 40h14.425L111 1.177H99.1Z"></path>
+                </g>
+            </svg>
+        </a>
+        <nav class="header-nav">
+            <a href="#">Assurance Moto</a>
+            <a href="#">Assurance Scooter</a>
+            <a href="#">Assurance Quad</a>
+            <a href="#">Besoin d'aide ?</a>
+        </nav>
+        <div class="header-cta">
+            <a href="#" style="color: var(--amv-green); font-weight: 600; text-decoration: none; font-size: 0.9rem;">Retrouver un devis</a>
+            <a href="#" class="btn-outline-header">Mon Espace AMV</a>
+        </div>
+    </div>
+</div>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+    <a href="#">AMV</a><span>›</span>
+    <a href="#">Assurance moto Kawasaki</a><span>›</span>
+    Assurance moto Kawasaki Z 650
+</div>
+
+<!-- HERO -->
+<div class="hero">
+    <div class="hero-inner">
+        <div class="hero-content">
+            <div class="hero-badge">Assurance moto Kawasaki</div>
+            <h1>Assurance moto <strong>Kawasaki Z 650</strong></h1>
+            <p class="hero-subtitle">Protégez votre Kawasaki Z 650 avec une assurance sur-mesure. Obtenez votre tarif en quelques clics et roulez l'esprit tranquille.</p>
+            <div class="hero-cta-group">
+                <a href="#" class="btn-primary">
+                    Tester notre tarif pour votre Z 650
+                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <a href="#" class="btn-secondary">Retrouver mon devis</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="hero-image-placeholder">
+                <img src="https://storage.kawasaki.eu/public/kawasaki.eu/en-EU/model/25MY_Z650_BK1_STU__2_.png" alt="Kawasaki Z 650 2025">
+                <div class="hero-image-label">Kawasaki Z 650 — à partir de 7 399 €</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- REASSURANCE -->
+<div class="reassurance">
+    <div class="reassurance-inner">
+        <div class="reassurance-item">
+            <div class="reassurance-icon">🛡️</div>
+            <h3>Leader depuis 50 ans</h3>
+            <p>Plus d'1 million d'assurés nous font confiance</p>
+        </div>
+        <div class="reassurance-item">
+            <div class="reassurance-icon">⚡</div>
+            <h3>Assurance immédiate</h3>
+            <p>Souscription en ligne 24h/24</p>
+        </div>
+        <div class="reassurance-item">
+            <div class="reassurance-icon">⭐</div>
+            <h3>4,8/5 satisfaction</h3>
+            <p>Selon Avis Vérifiés</p>
+        </div>
+        <div class="reassurance-item">
+            <div class="reassurance-icon">📞</div>
+            <h3>300 conseillers</h3>
+            <p>Basés à Bordeaux, à votre écoute</p>
+        </div>
+    </div>
+</div>
+
+<!-- FICHE TECHNIQUE + CONTENU -->
+<div class="section">
+    <h2 class="section-title"><span>La Kawasaki Z 650</span> : un roadster polyvalent et accessible</h2>
+    <div class="fiche-grid">
+        <div class="fiche-card">
+            <h3>Fiche technique</h3>
+            <div class="spec-row">
+                <span class="spec-label">Cylindrée</span>
+                <span class="spec-value">649 cm³</span>
+            </div>
+            <div class="spec-row">
+                <span class="spec-label">Moteur</span>
+                <span class="spec-value">Bicylindre parallèle</span>
+            </div>
+            <div class="spec-row">
+                <span class="spec-label">Puissance</span>
+                <span class="spec-value">68 ch (50 kW)</span>
+            </div>
+            <div class="spec-row">
+                <span class="spec-label">Poids</span>
+                <span class="spec-value">189 kg</span>
+            </div>
+            <div class="spec-row">
+                <span class="spec-label">Hauteur de selle</span>
+                <span class="spec-value">790 mm</span>
+            </div>
+            <div class="spec-row">
+                <span class="spec-label">Catégorie</span>
+                <span class="spec-value">Roadster / Naked</span>
+            </div>
+            <div class="spec-row">
+                <span class="spec-label">Permis requis</span>
+                <span class="spec-value">A2 (sans bridage)</span>
+            </div>
+        </div>
+        <div class="fiche-card">
+            <h3>Pourquoi assurer votre Z 650 chez AMV ?</h3>
+            <div class="fiche-text">
+                <p>La Kawasaki Z 650 est l'un des roadsters les plus populaires du marché français. Son style Sugomi affirmé et son moteur bicylindre de 649 cm³ en font un choix privilégié pour les détenteurs du permis A2 comme pour les motards expérimentés.</p>
+                <p>Avec son gabarit compact et sa puissance maîtrisée, la Z 650 se prête aussi bien aux trajets quotidiens qu'aux balades du week-end. Son tarif d'assurance reste accessible, mais il est essentiel de bien choisir ses garanties pour protéger un investissement qui peut dépasser les 7 000 €.</p>
+                <p>Chez AMV, nous adaptons votre couverture aux spécificités de la Z 650 : garantie vol renforcée pour ce modèle très prisé, couverture des équipements et accessoires, et reprise de votre meilleur bonus auto ou moto.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- CTA BANNER -->
+<div class="cta-banner">
+    <h2>Construisez votre assurance sur-mesure pour votre Kawasaki Z 650</h2>
+    <p>Obtenez votre tarif personnalisé en 3 minutes, sans engagement.</p>
+    <a href="#" class="btn-white">
+        Tester notre tarif
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+</div>
+
+<!-- AUTRES MODELES KAWASAKI -->
+<div class="models-section">
+    <div class="models-inner">
+        <h2 class="section-title">AMV assure tous les modèles <span>Kawasaki</span></h2>
+        <div class="models-grid">
+            <a href="#" class="model-card">
+                <div class="model-card-img"><img src="https://storage.kawasaki.eu/public/kawasaki.eu/en-EU/model/25MY_Z900_GN1_STU (2).001.png" alt="Kawasaki Z 900"></div>
+                <div class="model-card-body">
+                    <h4>Kawasaki Z 900</h4>
+                    <div class="model-card-price">
+                        <small>à partir de</small>
+                        <strong>18,50€</strong>
+                        <span class="unit">/ mois</span>
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="model-card">
+                <div class="model-card-img"><img src="https://storage.kawasaki.eu/public/kawasaki.eu/en-EU/model/25MY_Versys_650_GY1_STU__2_.png" alt="Kawasaki Versys 650"></div>
+                <div class="model-card-body">
+                    <h4>Kawasaki Versys 650</h4>
+                    <div class="model-card-price">
+                        <small>à partir de</small>
+                        <strong>14,90€</strong>
+                        <span class="unit">/ mois</span>
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="model-card">
+                <div class="model-card-img"><img src="https://storage.kawasaki.eu/public/kawasaki.eu/en-EU/model/24MY_Ninja_650_GN1_STU__2_.png" alt="Kawasaki Ninja 650"></div>
+                <div class="model-card-body">
+                    <h4>Kawasaki Ninja 650</h4>
+                    <div class="model-card-price">
+                        <small>à partir de</small>
+                        <strong>16,20€</strong>
+                        <span class="unit">/ mois</span>
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="model-card">
+                <div class="model-card-img"><img src="https://storage.kawasaki.eu/public/kawasaki.eu/en-EU/model/25MY_Z650RS_BK1_STU__2_.png" alt="Kawasaki Z 650 RS"></div>
+                <div class="model-card-body">
+                    <h4>Kawasaki Z 650 RS</h4>
+                    <div class="model-card-price">
+                        <small>à partir de</small>
+                        <strong>15,80€</strong>
+                        <span class="unit">/ mois</span>
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="model-card">
+                <div class="model-card-img"><img src="https://storage.kawasaki.eu/public/kawasaki.eu/en-EU/model/25MY_Vulcan_S_GY2_STU__2_.png" alt="Kawasaki Vulcan S"></div>
+                <div class="model-card-body">
+                    <h4>Kawasaki Vulcan S</h4>
+                    <div class="model-card-price">
+                        <small>à partir de</small>
+                        <strong>13,40€</strong>
+                        <span class="unit">/ mois</span>
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="model-card">
+                <div class="model-card-img"><img src="https://storage.kawasaki.eu/public/kawasaki.eu/en-EU/model/19ZR1000J_40RBK2DRS1CG_A.png" alt="Kawasaki Z 1000"></div>
+                <div class="model-card-body">
+                    <h4>Kawasaki Z 1000</h4>
+                    <div class="model-card-price">
+                        <small>à partir de</small>
+                        <strong>22,30€</strong>
+                        <span class="unit">/ mois</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <a href="#" class="models-link">
+            Voir tous les modèles Kawasaki
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+    </div>
+</div>
+
+<!-- FAQ -->
+<div class="faq-section">
+    <h2 class="section-title">Questions fréquentes sur l'assurance <span>Kawasaki Z 650</span></h2>
+    <div class="faq-list">
+        <div class="faq-item open">
+            <button class="faq-question">
+                Quel est le prix d'une assurance pour une Kawasaki Z 650 ?
+                <span class="faq-arrow">▾</span>
+            </button>
+            <div class="faq-answer">
+                Le tarif d'une assurance pour la Kawasaki Z 650 dépend de plusieurs facteurs : votre profil (âge, bonus/malus, expérience), votre lieu de résidence, le type de stationnement et le niveau de garanties choisi. Chez AMV, nous proposons des formules adaptées à tous les budgets, de l'assurance au tiers à la formule tous risques. N'hésitez pas à réaliser un devis en ligne pour obtenir votre tarif personnalisé en quelques minutes.
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question">
+                Quelle formule d'assurance choisir pour ma Z 650 ?
+                <span class="faq-arrow">▾</span>
+            </button>
+            <div class="faq-answer">
+                Pour une Kawasaki Z 650 récente, nous recommandons au minimum la formule Vol/Incendie, voire la formule Tous Risques. La Z 650 fait partie des modèles les plus vendus en France, ce qui la rend attractive pour les voleurs. Une garantie vol est donc fortement conseillée. Si votre moto a plus de 5 ans, une formule intermédiaire avec dommages collision peut suffire.
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question">
+                La Z 650 est-elle éligible au permis A2 ?
+                <span class="faq-arrow">▾</span>
+            </button>
+            <div class="faq-answer">
+                Oui, la Kawasaki Z 650 est directement accessible avec le permis A2, sans nécessité de bridage. Sa puissance de 68 ch (50 kW) respecte la limite des 47,5 ch (35 kW) en version A2 bridée, ou peut être conduite en version full avec le permis A2 selon les millésimes. Chez AMV, nous assurons les jeunes conducteurs permis A2 avec des conditions parmi les plus larges du marché.
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question">
+                Qu'est-ce qui distingue la Kawasaki Z 650 sur le marché ?
+                <span class="faq-arrow">▾</span>
+            </button>
+            <div class="faq-answer">
+                La Z 650 se distingue par son excellent rapport qualité-prix, son poids contenu de 189 kg et son moteur bicylindre souple et performant. Elle intègre un tableau de bord TFT couleur avec connectivité Bluetooth via l'application Rideology. Son design Sugomi lui confère une personnalité affirmée. C'est l'une des motos les plus vendues en France, particulièrement appréciée des motards permis A2.
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- INTERNAL LINKS -->
+<div class="internal-links">
+    <div class="internal-links-inner">
+        <h3>Assurance moto par marque</h3>
+        <a href="#" class="internal-link-pill">Assurance Yamaha</a>
+        <a href="#" class="internal-link-pill">Assurance Honda</a>
+        <a href="#" class="internal-link-pill">Assurance Suzuki</a>
+        <a href="#" class="internal-link-pill">Assurance BMW</a>
+        <a href="#" class="internal-link-pill">Assurance KTM</a>
+        <a href="#" class="internal-link-pill">Assurance Harley-Davidson</a>
+        <a href="#" class="internal-link-pill">Assurance Triumph</a>
+        <a href="#" class="internal-link-pill">Assurance Ducati</a>
+        <a href="#" class="internal-link-pill">Toutes les marques →</a>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+    <div class="footer-inner">
+        <div class="footer-links">
+            <a href="#">Mentions légales</a>
+            <a href="#">Protection des données</a>
+            <a href="#">Copyright</a>
+            <a href="#">Plan du site</a>
+        </div>
+        <span>© 2025 AMV Tous droits réservés</span>
+    </div>
+</div>
+
+<script>
+    // FAQ Toggle
+    document.querySelectorAll('.faq-question').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const item = btn.parentElement;
+            const wasOpen = item.classList.contains('open');
+            // Close all
+            document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+            // Toggle clicked
+            if (!wasOpen) item.classList.add('open');
+        });
+    });
+</script>
+
+</body>
+</html>
