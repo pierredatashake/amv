@@ -303,6 +303,24 @@
         .spec-row:last-child { border-bottom: none; }
         .spec-label { color: var(--amv-gray-text); }
         .spec-value { font-weight: 600; }
+        .btn-fiche {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 1.25rem;
+            padding: 10px 20px;
+            border: 1.5px solid var(--amv-green);
+            border-radius: 50px;
+            color: var(--amv-green);
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        .btn-fiche:hover {
+            background: var(--amv-green);
+            color: white;
+        }
         
         .fiche-text {
             font-size: 0.95rem;
@@ -310,6 +328,41 @@
             line-height: 1.7;
         }
         .fiche-text p { margin-bottom: 1rem; }
+        .fiche-text a {
+            color: var(--amv-green);
+            font-weight: 600;
+            text-decoration: underline;
+            text-decoration-color: rgba(0, 168, 80, 0.3);
+            text-underline-offset: 3px;
+            transition: text-decoration-color 0.2s;
+        }
+        .fiche-text a:hover {
+            text-decoration-color: var(--amv-green);
+        }
+
+        /* SEO CONTENT BLOCK */
+        .seo-block {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 2rem 0;
+        }
+        .seo-block .seo-text {
+            font-size: 0.95rem;
+            color: var(--amv-gray-text);
+            line-height: 1.7;
+        }
+        .seo-block .seo-text p { margin-bottom: 1rem; }
+        .seo-block .seo-text a {
+            color: var(--amv-green);
+            font-weight: 600;
+            text-decoration: underline;
+            text-decoration-color: rgba(0, 168, 80, 0.3);
+            text-underline-offset: 3px;
+            transition: text-decoration-color 0.2s;
+        }
+        .seo-block .seo-text a:hover {
+            text-decoration-color: var(--amv-green);
+        }
 
         /* MODELS CAROUSEL */
         .models-section {
@@ -670,13 +723,17 @@
                 <span class="spec-label">Permis requis</span>
                 <span class="spec-value">A2 (sans bridage)</span>
             </div>
+            <a href="#" class="btn-fiche">
+                Voir la fiche technique complète
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
         </div>
         <div class="fiche-card">
             <h3>Pourquoi assurer votre Z 650 chez AMV ?</h3>
             <div class="fiche-text">
-                <p>La Kawasaki Z 650 est l'un des roadsters les plus populaires du marché français. Son style Sugomi affirmé et son moteur bicylindre de 649 cm³ en font un choix privilégié pour les détenteurs du permis A2 comme pour les motards expérimentés.</p>
+                <p>La Kawasaki Z 650 est l'un des roadsters les plus populaires du marché français. Son style Sugomi affirmé et son moteur bicylindre de 649 cm³ en font un choix privilégié pour les détenteurs du permis A2 comme pour les motards expérimentés en recherche d'une <a href="/assurance-moto/">assurance moto</a> à la fois complète et abordable.</p>
                 <p>Avec son gabarit compact et sa puissance maîtrisée, la Z 650 se prête aussi bien aux trajets quotidiens qu'aux balades du week-end. Son tarif d'assurance reste accessible, mais il est essentiel de bien choisir ses garanties pour protéger un investissement qui peut dépasser les 7 000 €.</p>
-                <p>Chez AMV, nous adaptons votre couverture aux spécificités de la Z 650 : garantie vol renforcée pour ce modèle très prisé, couverture des équipements et accessoires, et reprise de votre meilleur bonus auto ou moto.</p>
+                <p>Chez AMV, spécialiste de l'<a href="/assurance-moto/">assurance moto</a> depuis plus de 50 ans, nous adaptons votre couverture aux spécificités de la Z 650 : garantie vol renforcée pour ce modèle très prisé, couverture des équipements et accessoires, et reprise de votre meilleur bonus auto ou moto.</p>
             </div>
         </div>
     </div>
@@ -768,6 +825,14 @@
             Voir tous les modèles Kawasaki
             <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
+    </div>
+</div>
+
+<!-- SEO CONTENT -->
+<div class="seo-block">
+    <div class="seo-text">
+        <p>La Kawasaki Z 650 fait partie des roadsters les plus assurés par AMV. Son moteur bicylindre de 649 cm³, son poids contenu et son ergonomie en font un modèle plébiscité aussi bien par les jeunes permis A2 que par les motards confirmés. Pour autant, chaque profil a ses spécificités d'assurance : un motard expérimenté avec un bon bonus n'aura pas le même tarif qu'un primo-accédant. C'est pourquoi nous proposons un large éventail de formules sur l'ensemble de la gamme <a href="/assurance-moto/assurance-moto-kawasaki/">assurance moto Kawasaki</a>, des modèles A2 aux hypersportives Ninja H2, en passant par les trails Versys et les roadsters Z.</p>
+        <p>Quel que soit le constructeur de votre deux-roues, AMV propose des contrats adaptés au profil exact de votre machine, à sa cote, à sa cylindrée et à son usage. Découvrez toutes nos solutions dédiées par marque sur notre page <a href="/assurance-moto/assurance-moto-par-constructeur/">assurance moto par constructeur</a> et obtenez un devis personnalisé en quelques minutes pour votre Z 650 ou tout autre modèle.</p>
     </div>
 </div>
 
